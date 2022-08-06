@@ -13,35 +13,34 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('first app'),
+        title: Text('First app'),
       ),
-      body: Container(
-        color: Colors.teal,
-        height: 400,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(8),
-              width: 100,
-              height: 100,
-              color: Colors.blue,
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              width: 100,
-              height: 100,
-              color: Colors.yellow,
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              width: 100,
-              height: 100,
-              color: Colors.purple,
+      body: Center(
+        child: Container(
+          width: 100,
+          height: 100,
+          color: Colors.yellow,
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
+          children: [
+            UserAccountsDrawerHeader(
+                accountName: Text('Abhishek Wankhade'),
+                accountEmail: Text('abhishekwankhade4670@gmail.com')),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Abhishek Wankhade'),
+              subtitle: Text('Developer'),
+              trailing: Icon(Icons.edit),
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
       ),
     );
   }
